@@ -41,3 +41,14 @@ and requirements of this exercise.
 I also referenced the following resource to refresh ggplot2 syntax
 and bar chart construction:
 - https://r-graph-gallery.com/218-basic-barplots-with-ggplot2.html
+
+## How to Run This Analysis
+
+1. Clone the repository:
+   git clone https://github.com/bisakhap/data-screening-exercise.git
+
+2. Run the main script:
+   source("scripts/clean_analyze_ice_detention.R")
+   
+3. Before running the analysis, install the required R package. You can do so by running the following in your R console:
+   install.packages("tidyverse")
