@@ -32,7 +32,7 @@ I used ChatGPT as development assistance to:
 - Review approaches for summing multiple numeric columns while handling missing values
 
 The specific prompt thread used is available here:
-https://chatgpt.com/c/696dfa05-9c88-8332-8cd1-21ad45da7f8a
+https://chatgpt.com/share/696e0d08-bbec-800d-a5e6-f36436becebc
 
 All code was written, adapted, and tested by me to fit the structure
 and requirements of this exercise.
