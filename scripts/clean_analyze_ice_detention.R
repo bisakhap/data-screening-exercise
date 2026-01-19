@@ -1,4 +1,15 @@
+# ==============================================================================
+# ICE Detention Facility Data Cleaning and Analysis
+# Date: January 19, 2026
+# Purpose: Clean and analyze ICE detention facility data and visualize
+#          the top 10 largest facilities by total average population.
+# ============================================================================== 
+
 library(tidyverse)
+
+# ==============================================================================
+# DATA LOADING
+# ==============================================================================
 
 #Read the raw data as text lines to find header
 raw_lines <- read_lines("data/messy_ice_detention.csv")
