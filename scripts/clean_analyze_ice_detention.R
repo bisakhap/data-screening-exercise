@@ -81,3 +81,40 @@ cat("\n=== TOP 10 LARGEST DETENTION FACILITIES ===\n")
 print(detention_analyzed %>% 
         select(Name, City, State, Total_Population), 
       n = 10)
+
+# ==============================================================================
+# 4. VISUALIZATION
+# ==============================================================================
+
+# Create bar chart of top 10 facilities
+plot_top10 <- ggplot(detention_analyzed, 
+                     aes(x = reorder(Name, Total_Population), 
+                         y = Total_Population)) +
+  geom_col(fill = "steelblue", alpha = 0.8) +
+  coord_flip() +  # Horizontal bars for better readability
+  labs(
+    title = "Top 10 Largest ICE Detention Facilities",
+    subtitle = "By Total Average Population (Sum of Levels A-D)",
+    x = "Facility Name",
+    y = "Total Average Population",
+    caption = "Data: ICE Detention Facility Dataset"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.text.y = element_text(size = 9),
+    panel.grid.major.y = element_blank()
+  )
+
+# Display the plot
+print(plot_top10)
+
+# Save the visualization as PNG
+ggsave("output/top10_detention_facilities.png", 
+       plot = plot_top10, 
+       width = 10, 
+       height = 6, 
+       dpi = 300)
+
+cat("\n=== VISUALIZATION SAVED ===\n")
+cat("File: top10_detention_facilities.png\n")
