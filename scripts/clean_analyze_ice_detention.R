@@ -63,3 +63,21 @@ print(head(detention_clean, 10), n = 10)
 
 cat("\n=== Sample of Cleaned Dates ===\n")
 head(detention_clean$`Last Inspection End Date`, 20)
+
+
+# ==============================================================================
+# DATA ANALYSIS
+# ==============================================================================
+
+# Create total population across all levels
+detention_analyzed <- detention_clean %>%
+  mutate(Total_Population = `Level A` + `Level B` + `Level C` + `Level D`) %>%
+  # Sort by Total Population descending
+  arrange(desc(Total_Population)) %>%
+  # Select top 10 facilities
+  slice_head(n = 10)
+
+cat("\n=== TOP 10 LARGEST DETENTION FACILITIES ===\n")
+print(detention_analyzed %>% 
+        select(Name, City, State, Total_Population), 
+      n = 10)
